@@ -1025,6 +1025,8 @@ sdb: ios=118610/50224, merge=0/0, ticks=2991317/6860, in_queue=2998169, util=99.
 
 ## vsftp
 ```
+目录权限不能为777，否则无法登录，配置文件每行末尾不要又空格
+
 默认兼容主动和被动模式，添加配置限制被动模式端口   FlashFXP可以看到被动模式端口
 #connect_from_port_20=YES 注释这行
 pasv_enable=YES
@@ -1032,6 +1034,13 @@ pasv_promiscuous=YES
 pasv_min_port=3000
 pasv_max_port=3500
 
+
+从2.3.5之后，vsftpd增强了安全检查，如果用户被限定在了其主目录下，则该用户的主目录不能再具有写权限了
+通过如下命令行可以解决  chmod a-w /home/user
+chroot_local_user=YES   限定在主目录
+chroot_list_enable=YES
+# (default follows)
+chroot_list_file=/etc/vsftpd/chroot_list    这些用户作为“例外”，不受限制
 
 
 yum install vsftpd curlftpfs
