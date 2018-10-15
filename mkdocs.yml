@@ -1,0 +1,58 @@
+site_name: mkdocs
+theme:
+  name: 'material'
+  feature:
+    tabs: true
+
+#material主题添加代理高亮
+markdown_extensions:
+  - codehilite
+
+extra_css: [extra.css]
+nav:
+  - home: 'index.md'
+  - python:
+    - python-base: 'python-base.md'
+    - python-lib: 'python-lib.md'
+    - python-lib2: 'python-lib2.md'
+    - python-web: 'python-web.md'
+    - python-other: 'python-other.md'
+  - service:
+    - nginx: 'nginx.md'
+    - nginx2: 'nginx2.md'
+    - apache: 'apache.md'
+    - saltstack: 'saltstack.md'
+    - tomcat: 'tomcat.md'
+    - ansible: 'ansible.md'
+    - trafficserver: 'trafficserver.md'
+    - haproxy: 'haproxy.md'
+    - docker: 'docker.md'
+    - varnish: 'varnish.md'
+    - bind: 'bind.md'
+    - lvs: 'lvs.md'
+    - log-analysis: 'log-analysis.md'
+  - database:
+    - mysql: 'mysql.md'
+    - mysql2: 'mysql2.md'
+    - memcached: 'memcached.md'
+    - redis: 'redis.md'
+    - mongodb: 'mongodb.md'
+    - hadoop: 'hadoop.md'
+    - postgresql: 'postgresql.md'
+  - monitor:
+    - open-falcon: 'open-falcon.md'
+    - zabbix: 'zabbix.md'
+    - zabbix2: 'zabbix2.md'
+    - netdata: 'netdata.md'
+  - basis:
+    - tcp-issue: 'tcp-issue.md'
+    - git-svn: 'git-svn.md'
+    - vpn: 'vpn.md'
+    - shell: 'shell.md'
+    - disk: 'disk.md'
+    - filesystem: 'filesystem.md'
+    - source: 'source.md'
+    - command: 'command.md'
+    - linux-base: 'linux-base.md'
+    - linux-soft: 'linux-soft.md'
+    - other: 'other.md'

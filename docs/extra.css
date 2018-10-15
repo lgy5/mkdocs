@@ -1,0 +1,12 @@
+.md-typeset .codehilite code, .md-typeset .codehilite pre, .md-typeset .highlight code, .md-typeset .highlight pre {
+    display: block;
+    margin: 0;
+    padding: 1.05rem 1.2rem;
+    background-color: transparent;
+    overflow: auto;
+    vertical-align: top;
+
+    /* 增加自动换行 */
+    white-space: pre-wrap; 	
+    word-wrap: normal;
+}

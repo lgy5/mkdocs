@@ -1,0 +1,32 @@
+language: python
+
+python:
+    - "2.7"
+install:
+  - pip install mkdocs
+  - pip install mkdocs-material pygments # 主题和代码高亮
+  - find /home/travis/virtualenv/ -name search_index.py -exec sed -i 's/sort_keys=True/sort_keys=True,ensure_ascii=False/g' {} \;
+script:
+  - mkdocs build
+  - python file/del.py
+
+
+after_script:
+  - cd ./site
+  - git init
+  - git config user.name "lgy5"
+  - git add .
+  - git commit -m 'travis'
+  - git push --force --quiet "https://lgy5:388ad8c69d82ca36d69bd18fcb442e70e9492e89@git.coding.net/lgy5/lgy5.coding.me.git" master:master
+
+
+deploy:                        # push github page
+   provider: pages
+   skip_cleanup: true
+   github_token: $GITHUB_TOKEN # 在项目仪表盘的 Settings -> Environment Variables 中配置
+   repo: lgy5/lgy5.github.io
+   #fqdn: www.zxdr.tk
+   local_dir: site
+   target-branch: master
+   on:
+     branch: master
