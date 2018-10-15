@@ -1357,7 +1357,7 @@ $mailValues = $login . "@test.cn";
 $mail = $mailValue; 改为  $mail = $mailValues;
 
 201行添加
-$mailcom = '/usr/local/bin/sendEmail -s 127.0.0.1 -f ldap_dk@bjmail.test.cn -t ' . $mail .  ' -u "Reset Ldap Password" -m "' . $reset_url . '"';
+$mailcom = '/usr/local/bin/sendEmail -s 127.0.0.1 -f test -t ' . $mail .  ' -u "Reset Ldap Password" -m "' . $reset_url . '"';
 if ( exec($mailcom) ) {
 注释 if ( send_mail($mailer, $mail, $mail_from, $mail_from_name .. ) {
 
