@@ -1928,4 +1928,10 @@ service sendmail restart
 HOSTNAME=主机名
 
 重启sendmail
+
+sendmail 用host
+默认情况下，sendmail使用DNS服务器解析域名，不会使用/etc/hosts里的设置
+/etc/mail/service.switch   增加文件重启sendmail
+hosts   files
+aliases files
 ```
