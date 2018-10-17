@@ -210,25 +210,26 @@ ExtendedStatus On
     yum -y install gcc httpd-devel libxml2-devel libpng-devel glib pango pango-devel freetype freetype-devel fontconfig cairo cairo-devel libart_lgpl libart_lgpl-devel popt-devel rrdtool rrdtool-devel rrdtool-perl fping mod_fcgid perl-devel fcgi perl-Sys-Syslog
     需要rrdtool cgilib fping  echoping  fcgi
 
-    wget http://down1.chinaunix.net/distfiles/cgilib-0.5.tar.gz
+    wget https://launchpad.net/cgilib/main/0.5/+download/cgilib-0.5.tar.gz
     tar zxvf cgilib-0.5.tar.gz
     cd cgilib-0.5
     make
     cp libcgi.a /usr/local/lib
     cp cgi.h /usr/include
 
-    https://fossies.org/linux/misc/old/echoping-6.0.2.tar.gz
+    wget https://fossies.org/linux/misc/old/echoping-6.0.2.tar.gz
     tar zxvf echoping-6.0.2.tar.gz
     cd echoping-6.0.2
     ./configure --without-libidn
     make && make install
 
-    yum install perl-core
+    yum install perl-core -y
     wget https://oss.oetiker.ch/smokeping/pub/smokeping-2.7.2.tar.gz
     tar zxvf smokeping-2.7.2.tar.gz
     cd smokeping-2.7.2
     ./configure --prefix=/usr/local/smokeping
     gmake install
+    gmake install  执行两次
 
     配置smokeping
     cd /usr/local/smokeping/
