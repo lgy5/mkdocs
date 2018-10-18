@@ -243,6 +243,9 @@ api=http://127.0.0.1:1988/v1/push
 ts=$(date +%s)
 endpoint=$(hostname)
 
+curll=$(ps aux |grep curl | wc -l)
+[ $curll -ge 5  ] && exit
+
 stat=$(curl http://127.0.0.1:1988 -o /dev/null -s -w %{http_code})
 if [ $stat -ne 404  ];then
     exit
