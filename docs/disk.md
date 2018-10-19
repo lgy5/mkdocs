@@ -1035,7 +1035,7 @@ pasv_min_port=3000
 pasv_max_port=3500
 
 
-从2.3.5之后，vsftpd增强了安全检查，如果用户被限定在了其主目录下，则该用户的主目录不能再具有写权限了
+从2.3.5之后，vsftpd增强了安全检查，如果用户被限定在了其主目录下，则该用户的主目录不能再具有写权限了 allow_writeable_chroot=YES 可以取消这个限制
 通过如下命令行可以解决  chmod a-w /home/user
 chroot_local_user=YES   限定在主目录
 chroot_list_enable=YES
