@@ -1,7 +1,7 @@
 #hosts
 203.208.41.79	translate.googleapis.com
 203.208.41.79	translate.google.cn
-23.42.177.46	ichef.bbci.co.uk
+#23.42.177.46	ichef.bbci.co.uk
 
 198.35.26.96	zh.wikipedia.org
 54.239.31.91	console.aws.amazon.com
@@ -14,3 +14,6 @@
 60.10.118.18 uplaypc-s-ubisoft-ww.cdn.ubi.com
 54.231.121.19 ubisoft-uplay-savegames.s3.amazonaws.com
 54.231.121.19 ubisoft-orbit-savegames.s3.amazonaws.com
+
+104.28.2.179	doub.io
+104.27.154.107	www.v2ray.com
