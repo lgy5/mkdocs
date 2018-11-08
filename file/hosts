@@ -1,20 +1,16 @@
 #hosts
 203.208.41.79	translate.googleapis.com
 203.208.41.79	translate.google.cn
-23.72.3.30  ichef.bbci.co.uk
-23.72.3.30	nav.files.bbci.co.uk
-
+23.72.3.30      ichef.bbci.co.uk
+23.72.3.30      nav.files.bbci.co.uk
 198.35.26.96	zh.wikipedia.org
 54.239.31.91	console.aws.amazon.com
 54.240.254.246	us-west-2.console.aws.amazon.com
-
-104.77.18.230 store.steampowered.com
-104.77.18.230 steamcommunity.com
-223.119.202.162 steam-chat.com
-60.10.118.18 uplaypc-s-ubisoft.cdn.ubi.com
-60.10.118.18 uplaypc-s-ubisoft-ww.cdn.ubi.com
-54.231.121.19 ubisoft-uplay-savegames.s3.amazonaws.com
-54.231.121.19 ubisoft-orbit-savegames.s3.amazonaws.com
-
+23.199.154.62	store.steampowered.com
+60.10.118.18	uplaypc-s-ubisoft.cdn.ubi.com
+60.10.118.18	uplaypc-s-ubisoft-ww.cdn.ubi.com
+54.231.121.19	ubisoft-uplay-savegames.s3.amazonaws.com
+54.231.121.19	ubisoft-orbit-savegames.s3.amazonaws.com
+23.207.115.222	static3.cdn.ubi.com
 104.28.2.179	doub.io
 104.27.154.107	www.v2ray.com
