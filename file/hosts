@@ -6,11 +6,11 @@
 198.35.26.96	zh.wikipedia.org
 54.239.31.91	console.aws.amazon.com
 54.240.254.246	us-west-2.console.aws.amazon.com
-23.199.154.62	store.steampowered.com
-60.10.118.18	uplaypc-s-ubisoft.cdn.ubi.com
-60.10.118.18	uplaypc-s-ubisoft-ww.cdn.ubi.com
-54.231.121.19	ubisoft-uplay-savegames.s3.amazonaws.com
-54.231.121.19	ubisoft-orbit-savegames.s3.amazonaws.com
-23.207.115.222	static3.cdn.ubi.com
+
+216.98.54.23	dmx.upc.ubisoft.com
+35.174.230.206	public-ubiservices.ubi.com
+125.56.201.114	ubisoft-avatars.akamaized.net
+125.56.201.120	ubistatic3-a.akamaihd.net
+
 104.28.2.179	doub.io
 104.27.154.107	www.v2ray.com
