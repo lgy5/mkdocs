@@ -1144,6 +1144,7 @@ write_enable=YES
 anon_upload_enable=YES
 anon_mkdir_write_enable=YES
 anon_other_write_enable=YES
+anon_umask=022
 one_process_model=NO
 chroot_local_user=YES
 allow_writeable_chroot=YES
