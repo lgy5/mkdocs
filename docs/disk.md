@@ -1040,7 +1040,7 @@ pasv_max_port=3500
 chroot_local_user=YES   限定在主目录
 chroot_list_enable=YES
 # (default follows)
-chroot_list_file=/etc/vsftpd/chroot_list    这些用户作为“例外”，不受限制
+#chroot_list_file=/etc/vsftpd/chroot_list    这些用户作为“例外”，不受限制
 
 
 yum install vsftpd curlftpfs
@@ -1113,6 +1113,74 @@ passwd ftpadmin 修改密码
 [root@localhost ~]# mount --bind /mnt/soft /var/ftp/a    这样就OK了。
 [root@localhost etc]# vi /etc/fstab
 将 /mnt/soft   /home/public  auto bind 0 0                         添加到/etc/fstab文件的末尾
+
+
+虚拟用户
+vim /etc/vsftpd/vftpuser.txt
+user
+passwd
+user2
+passwd2
+
+db_load -T -t hash -f /etc/vsftpd/vftpuser.txt /etc/vsftpd/vu_list.db
+chmod 600 /etc/vsftpd/vu_list.db
+
+vi /etc/pam.d/vsftp.vu  新建一个虚拟用户的PAM文件
+auth required /usr/lib64/security/pam_userdb.so db=/etc/vsftpd/vu_list
+account required /usr/lib64/security/pam_userdb.so db=/etc/vsftpd/vu_list
+
+useradd -d /home/ftpsite virtual_user 建立虚拟用户
+chmod 700 /home/ftpsite
+
+编辑/etc/vsftpd/vsftpd.conf文件，使其整个文件内容如下所示（去掉了注释内容）：
+anonymous_enable=NO
+local_enable=YES
+local_umask=022
+xferlog_enable=YES
+connect_from_port_20=YES
+xferlog_std_format=YES
+listen=YES
+write_enable=YES
+anon_upload_enable=YES
+anon_mkdir_write_enable=YES
+anon_other_write_enable=YES
+one_process_model=NO
+chroot_local_user=YES
+allow_writeable_chroot=YES
+ftpd_banner=Welcom to my FTP server.
+anon_world_readable_only=NO
+guest_enable=YES
+guest_username=virtual_user
+pam_service_name=vsftp.vu
+ 
+上面代码中，guest_enable=YES表示启用虚拟用户；guest_username=virtual则是将虚拟用户映射为本地用户，这样虚拟 用户登录后才能进入本地用户virtual的目录/ftpsite；
+           pam_service_name=vsftp.vu指定PAM的配置文件为 vsftp.vu。
+
+service vsftpd restart
+
+在虚拟FTP服务器中，也可以对各个用户的权限进行设置。方法是在/etc/vsftpd.conf文件中添加如下一行：
+user_config_dir=用户配置文件目录
+
+然后在用户配置文件目录下创建相应的用户配置文件，比如为上述名为gou的用户创建一个配置文件（假设配置文件目录为/etc/vsftpd/vsftpd_user_conf）：
+
+#vi /etc/vsftpd/vsftpd_user_conf/gou
+write_enable=NO
+anono_upload_enable=NO
+ 
+8.虚拟用户个人目录设置
+大家可以发现，无论是哪个虚拟用户，登录后所在的目录都是/home/ftpsite，即都是guest用户的自家目录。下面，介绍如何为每个虚拟用户建立自家目录。
+一种作法是在虚拟用户的个人配置文件中使用local_root选项指定虚拟用户的自家目录。以gou为例，在第上步的基础上，首先/etc/vsftpd_user_conf/gou文件中加入：
+local_root=/home/ftpsite/gou
+/home/ftpsite下新建gou目录，并将权限设为virtual_user：
+
+9.添加FTP用户的步骤
+      1.在vftpuser.txt中添加用户名和密码
+      2.运行如下命令,将用户名和密码添加到数据库中
+        db_load -T -t hash -f /etc/vsftpd/vftpuser.txt /etc/vsftpd/vu_list.db
+      3.在/home/ftpsite中新建一个文件夹,与用户明相同
+      4.在vsftpd_user_conf文件夹下新建和用户名相同的文件,并在其中加入
+       local_root=/home/ftpsite/用户名
+
 
 
 四、FTP 的主动与被动模式
