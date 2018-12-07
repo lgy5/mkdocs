@@ -1802,8 +1802,12 @@ yum install ipa-server bind-dyndb-ldap ipa-server-dns
 HOSTNAME=test1
 
 将dns指向主ldap
-
 /etc/resolv.conf
+
+hosts文件一致
+主机名一致，需要完整的域 xxx.l.xxxx.com
+时间一致   ntpdate 主ipa
+selinux firewalld NetworkManager iptable都关闭
 
 nameserver ipaserver的ip
 
