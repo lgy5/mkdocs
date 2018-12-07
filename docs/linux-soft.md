@@ -1803,13 +1803,13 @@ HOSTNAME=test1
 
 将dns指向主ldap
 /etc/resolv.conf
+nameserver ipaserver的ip
 
 hosts文件一致
 主机名一致，需要完整的域 xxx.l.xxxx.com
 时间一致   ntpdate 主ipa
 selinux firewalld NetworkManager iptable都关闭
 
-nameserver ipaserver的ip
 
 ipa-replica-install --principal admin --admin-password 123456.test --setup-dns --no-forwarders --setup-ca #--setup-kra
 
