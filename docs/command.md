@@ -1214,6 +1214,8 @@ idCPU 空闲时间的百分比
 
 
 ## snmpwalk
+yum install net-snmp-utils -y
+
 snmpwalk -c public  -v 2c 172.31.38.23 ifDescr  端口
 
 snmpwalk -c public  -v 2c 172.31.38.23 IF-MIB::ifInOctets  入流量
