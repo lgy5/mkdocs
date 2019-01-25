@@ -93,23 +93,6 @@ ping -6 [2001:470:1:18::125]
 ```
 
 
-
-## steam下载
-```
-@echo
-color 09
-echo 放入steam目录 循环启动Steam
-:down
-ping 127.0.0.1 -n 1800 >nul
-taskkill /f /im Steam.exe
-start Steam.exe
-goto down
-pause
-
-```
-
-
-
 ## 百度语音
 ```
 # coding=utf-8
@@ -233,54 +216,27 @@ crontab -l
 ```
 
 
-
 ## chrome
 ```
-
-到目前为止，Chrome 浏览器主要包括 Stable 正式版、Beta 测试版、DEV 开发版、Canary金丝雀版
-以及鼻祖 Chromium 版 。从稳定性方面，
-Stable>Beta>DEV>Canary>Chromium，而更新的速度则正好相反 Chromium>Canary>DEV>Beta>Stable
-
-
-1、Windows 平台 32 位版本：
-
-Stable正式版：https://www.google.com/chrome/browser/
-Bata 测试版：https://www.google.com/chrome/browser/beta.html?platform=win
-DEV 开发版：https://www.google.com/chrome/browser/index.html?extra=devchannel&platform=win
-Canary 金丝雀版：http://www.google.com/chrome/browser/canary.html?platform=win
-2、Windows 平台 64 位版本：
-
-Stable正式版：https://www.google.com/chrome/browser/?platform=win64
-Bata 测试版：https://www.google.com/chrome/browser/beta.html?platform=win64
-DEV 开发版：https://www.google.com/chrome/browser/index.html?extra=devchannel&platform=win64
-Canary 金丝雀版：http://www.google.com/chrome/browser/canary.html?platform=win64
-3、Windows 平台32位离线安装包：
+Windows 平台32位离线安装包：
 
 Canary 金丝雀版：http://www.google.com/chrome/eula.html?platform=win&extra=canarychannel&standalone=1
 Dev开发版：http://www.google.com/chrome/eula.html?platform=win&extra=devchannel&standalone=1
 Beta测试版：http://www.google.com/chrome/eula.html?platform=win&extra=betachannel&standalone=1
 Stable稳定版：http://www.google.com/chrome/eula.html?platform=win&extra=stablechannel&standalone=1
-其次是 MAC 平台：
 
-Stable正式版：https://www.google.com/chrome/browser/?platform=mac
-Bata 测试版：https://www.google.com/chrome/browser/beta.html?platform=mac&extra=betachannel
-DEV 开发版：https://www.google.com/chrome/browser/?platform=mac&extra=devchannel
-Canary 金丝雀版：http://www.google.com/chrome/browser/canary.html?platform=mac
-第三个 Linux 平台：
+crx下载
+https://chrome-extension-downloader.com/how-does-it-work.php
+直接获取扩展名的URL如下： 
+https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&x=id%3D~~~~%26installsource%3Dondemand%26uc 
+您必须将4个波浪号（~~~~）替换为您要下载的扩展名的ID。
 
-Stable 正式版：https://www.google.com/chrome/browser/?platform=linux
-Ubuntu/Debian 32-bit Bata 版: https://www.google.com/chrome/browser/beta.html?platform=linux
-Ubuntu/Debian 32-bit DEV 版: https://www.google.com/chrome/browser/?platform=linux&extra=devchannel
-Ubuntu/Debian 64-bit Bata 版: https://www.google.com/chrome/browser/beta.html?platform=linux
-Ubuntu/Debian 64-bit DEV 版: https://www.google.com/chrome/browser/?platform=linux&extra=devchannel
-Fedora/OpenSUSE 32-bit Bata 版: https://www.google.com/chrome/browser/beta.html?platform=linux
-Fedora/OpenSUSE 32-bit DEV 版: https://www.google.com/chrome/browser/?platform=linux&extra=devchannel
-Fedora/OpenSUSE 64-bit Bata 版: https://www.google.com/chrome/browser/beta.html?platform=linux
-Fedora/OpenSUSE 64-bit DEV 版: https://www.google.com/chrome/browser/?platform=linux&extra=devchannel
-Chromium下载地址：http://commondatastorage.googleapis.com/chromium-browser-continuous/index.html
+例如，如果您要下载Google地图，可以在上面找到该扩展程序https://chrome.google.com/webstore/detail/google-maps/lneaknkopdijkpnocmklfnjbeapigfbh。
+提取的Google地图ID是lneaknkopdijkpnocmklfnjbeapigfbh。
+Google地图的直接下载网址将是https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&x=id%3Dlneaknkopdijkpnocmklfnjbeapigfbh%26installsource%3Dondemand%26uc。
 
-当然，可能还有一些下载地址，浏览迷暂时没有收集到，欢迎大家踊跃发言，提供更多资料。另外，大家可以收藏下  
-http://liulanmi.com/chrome 页面，Chrome 的下载地址浏览迷会随时在此更新补充。
+下载的文件将始终命名为extension_[version].crx。 
+在我们使用Google地图的示例中extension_5_2_7.crx，因为当前版本的Google地图是5.2.7。
 ```
 
 ## 基本优化
