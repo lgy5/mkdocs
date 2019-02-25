@@ -1902,6 +1902,16 @@ http://www.freeipa.org/page/V3/Backup_and_Restore
 
 https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Identity_Management_Guide/index.html
 
+## ca过期
+https://www.freeipa.org/page/Certmonger
+正常会自动续期，过期后将系统时间改回之前几天  watch -n 1 'date -s "2019-01-15"'
+ipa-getcert list|grep exp
+ipa-getcert list|grep ID
+ipa-getcert resubmit -i 20150320032117
+ipa-getcert resubmit -i 20150320032156
+ipa-getcert resubmit -i 201503200324554
+
+4.0+ 有 ipa-cacert-manage renew
 ```
 
 ## sendmail转发
