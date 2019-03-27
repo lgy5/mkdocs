@@ -1164,8 +1164,7 @@ user_config_dir=/etc/vsftpd/vsftpd_user_conf  用户配置文件目录
 
 然后在用户配置文件目录下创建相应的用户配置文件，比如为上述名为gou的用户创建一个配置文件：
 #vi /etc/vsftpd/vsftpd_user_conf/gou
-write_enable=NO
-anono_upload_enable=NO
+write_enable=YES
 local_root=家目录   将权限设为virtual_user
 
 9.添加FTP用户的步骤
