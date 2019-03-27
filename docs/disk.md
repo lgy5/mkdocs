@@ -1125,9 +1125,10 @@ passwd2
 db_load -T -t hash -f /etc/vsftpd/vftpuser.txt /etc/vsftpd/vu_list.db
 chmod 600 /etc/vsftpd/vu_list.db
 
-vi /etc/pam.d/vsftp.vu  新建一个虚拟用户的PAM文件   find / -name pam_userdb.so
+vi /etc/pam.d/vsftp.vu  新建一个虚拟用户的PAM文件   
 auth required /usr/lib64/security/pam_userdb.so db=/etc/vsftpd/vu_list
 account required /usr/lib64/security/pam_userdb.so db=/etc/vsftpd/vu_list
+# pam_userdb.so 需要find / -name pam_userdb.so确认下，不同系统位置可能不同
 
 useradd -d /home/ftpsite virtual_user 建立虚拟用户
 chmod 700 /home/ftpsite
