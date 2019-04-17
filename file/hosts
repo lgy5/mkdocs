@@ -1,7 +1,8 @@
 #hosts
 203.208.41.79	translate.googleapis.com
 203.208.41.79	translate.google.cn
-198.35.26.96	zh.wikipedia.org
+103.102.166.224	zh.wikipedia.org
+103.102.166.224	en.wikipedia.org
 72.21.214.67	signin.aws.amazon.com
 54.239.30.25	console.aws.amazon.com
 54.240.254.239	us-west-2.console.aws.amazon.com
