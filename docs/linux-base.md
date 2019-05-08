@@ -1067,7 +1067,13 @@ mv ifcfg-em2 ifcfg-bond0  还有配置里面的名字，之后重启
 
 centos7
 
-/etc/udev/rules.d/70-persistent-net.rules
+[root@localhost ~]# vi /usr/lib/udev/rules.d/60-net.rules  需要重启
+#将第一行注释掉
+#ACTION=="add", SUBSYSTEM=="net", DRIVERS=="?*", ATTR{type}=="1", PROGRAM="/lib/udev/rename_device", RESULT=="?*", NAME="$result"
+ACTION=="add", SUBSYSTEM=="net", DRIVERS=="?*", ATTR{type}=="1", ATTR{address}=="d8:9e:*:10:*11", NAME="eth0"
+
+ip link set dev eth0 name eth1 临时，重启失效
+
 ```
 
 ## 查询service tag
