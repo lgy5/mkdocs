@@ -1949,4 +1949,7 @@ sendmail 用host
 /etc/mail/service.switch   增加文件重启sendmail
 hosts   files
 aliases files
+
+编辑/etc/mail/mailertable文件，增加mailserver smtp:[1.1.1.1]行（取消注释即可）；
+执行makemap hash /etc/mail/mailertable < /etc/mail/mailertable && service sendmail restart
 ```
