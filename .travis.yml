@@ -12,11 +12,7 @@ script:
 
 
 after_script:
-#  - cd ./site
-  - git clone https://github.com/jeanropke/RDR2CollectorsMap.git
-  - cd ./RDR2CollectorsMap
-  - rm -rf assets/maps/
-  - rm -rf .git
+  - cd ./site
   - git init
   - git config user.name "lgy5"
   - git add .
